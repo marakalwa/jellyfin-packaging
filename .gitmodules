@@ -3,7 +3,7 @@
 	url = https://github.com/jellyfin/jellyfin
 [submodule "jellyfin-web"]
 	path = jellyfin-web
-	url = https://github.com/jellyfin/jellyfin-web
+	url = https://github.com/marakalwa/jellyfin-web
 [submodule "jellyfin-server-windows"]
 	path = jellyfin-server-windows
 	url = https://github.com/jellyfin/jellyfin-server-windows.git
