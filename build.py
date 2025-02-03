@@ -594,27 +594,27 @@ def build_docker(
     # Log out of DockerHub
     os.system("docker logout")
 
-    # Log in to GHCR
-    os.system(
-        f"docker login -u {getenv('GHCR_USERNAME')} -p {getenv('GHCR_TOKEN')} ghcr.io 2>&1"
-    )
+    # # Log in to GHCR
+    # os.system(
+    #     f"docker login -u {getenv('GHCR_USERNAME')} -p {getenv('GHCR_TOKEN')} ghcr.io 2>&1"
+    # )
 
-    # Push the images to GHCR
-    for image in images_ghcr:
-        log(f">>> Pushing image {image} to GHCR")
-        log(f">>>> docker push {image} 2>&1")
-        os.system(f"docker push {image} 2>&1")
+    # # Push the images to GHCR
+    # for image in images_ghcr:
+    #     log(f">>> Pushing image {image} to GHCR")
+    #     log(f">>>> docker push {image} 2>&1")
+    #     os.system(f"docker push {image} 2>&1")
 
-    manifests_ghcr = build_manifests("ghcr.io", images_ghcr)
+    # manifests_ghcr = build_manifests("ghcr.io", images_ghcr)
 
-    # Push the images and manifests to GHCR
-    for manifest in manifests_ghcr:
-        log(f">>> Pushing manifest {manifest} to GHCR")
-        log(f">>>> docker manifest push --purge {manifest} 2>&1")
-        os.system(f"docker manifest push --purge {manifest} 2>&1")
+    # # Push the images and manifests to GHCR
+    # for manifest in manifests_ghcr:
+    #     log(f">>> Pushing manifest {manifest} to GHCR")
+    #     log(f">>>> docker manifest push --purge {manifest} 2>&1")
+    #     os.system(f"docker manifest push --purge {manifest} 2>&1")
 
-    # Log out of GHCR
-    os.system("docker logout")
+    # # Log out of GHCR
+    # os.system("docker logout")
 
 
 def build_nuget(
